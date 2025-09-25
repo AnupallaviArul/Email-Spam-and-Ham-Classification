@@ -1,95 +1,99 @@
-# Email Spam Classification Project
 
-## Project Description
+# Email Spam Classification Project Overview
 
-This project aims to build a machine learning model to classify emails as either "spam" or "ham" (not spam). Effective spam classification is important for improving user experience, protecting against security threats, and ensuring efficient resource utilization.
+## Project Overview
 
-## Data
+This project focuses on building an email spam classification model using machine learning techniques. The goal is to automatically identify and filter out unwanted spam emails, improving user experience and security.
 
-The dataset used in this project is an email dataset containing email text and a label indicating whether the email is spam or ham.
+## Problem Definition and Business Goal
 
-**Initial Data Inspection:**
+The core problem is to accurately distinguish between legitimate emails ('ham') and spam emails. The business goal is to implement an effective spam filtering system that minimizes false positives (marking legitimate emails as spam) while maintaining a reasonable rate of identifying spam emails.
 
-*   The dataset contains 5572 emails.
-*   Initial inspection revealed that the dataset has three columns ('Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4') with a large number of missing values, which were later handled by concatenating their content with the main text column ('v2') and dropping the original columns. There were no missing values in the 'v1' and 'v2' columns.
+## Data Source
 
-**Class Distribution:**
-
-*   The dataset is imbalanced, with 4825 ham emails and 747 spam emails. This represents approximately 86.6% ham and 13.4% spam.
-
-![Class Distribution Plot](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/class_dist.png)
-
-**Email Length Analysis:**
-
-*   Spam emails tend to be longer than ham emails on average (142.15 characters for spam vs 74.63 characters for ham).
-
-![Email Length Distribution Plots](email_length_distribution.png)
+The dataset used for this project is sourced from Kaggle. It contains a collection of emails labeled as either 'ham' or 'spam'.
 
 ## Methodology
 
-The project followed a standard machine learning workflow:
+The methodology followed in this project includes several key steps:
 
-1.  **Data Loading and Inspection:** Loading the dataset and performing initial checks for data quality.
-2.  **Exploratory Data Analysis (EDA):** Analyzing the class distribution, email length, and common words in spam and ham emails.
-3.  **Text Preprocessing:** Cleaning the text data by converting to lowercase, removing punctuation, tokenizing, and stemming.
-4.  **Feature Extraction:** Transforming the text data into numerical features using TF-IDF vectorization.
-5.  **Model Training:** Training Multinomial Naive Bayes and Logistic Regression classifiers on the prepared data.
-6.  **Model Evaluation:** Evaluating the trained models using metrics such as accuracy, precision, recall, F1-score, and confusion matrices.
-7.  **Key Feature Analysis:** Identifying the words most indicative of spam and ham according to the models.
-8.  **Error Analysis:** Examining examples of misclassified emails to understand model limitations.
+1.  **Data Ingestion and Initial Inspection:** Loading the dataset and performing initial checks for missing values, data types, and class distribution.
+2.  **Exploratory Data Analysis (EDA):** Analyzing the characteristics of 'ham' and 'spam' emails, including email length and common words.
+3.  **Text Preprocessing:** Cleaning the text data by lowercasing, removing punctuation, tokenization, and stemming.
+4.  **Feature Extraction:** Converting the preprocessed text into numerical features using TF-IDF vectorization.
+5.  **Model Training:** Training Multinomial Naive Bayes and Logistic Regression models on the prepared data.
+6.  **Model Evaluation:** Assessing model performance using metrics like accuracy, precision, recall, and F1-score, and analyzing confusion matrices.
+7.  **Key Feature Analysis:** Identifying words that are most indicative of spam and ham.
 
-## Results
+## Results and Findings
 
-Two models, Multinomial Naive Bayes and Logistic Regression, were trained and evaluated.
+The exploratory data analysis revealed that spam emails are generally longer than ham emails and contain distinct sets of common words. The dataset is imbalanced, with more ham emails than spam.
 
-**Model Performance on Test Set:**
+**Visualizations:**
 
-*   **Multinomial Naive Bayes:**
-    *   Accuracy: 0.9713
-    *   Precision (Spam): 0.9916
-    *   Recall (Spam): 0.7919
-    *   F1-score (Spam): 0.8806
+**Class Distribution:**
 
-*   **Logistic Regression:**
-    *   Accuracy: 0.9695
-    *   Precision (Spam): 0.9915
-    *   Recall (Spam): 0.7785
-    *   F1-score (Spam): 0.8722
+The dataset is imbalanced, with a significantly larger number of 'ham' emails compared to 'spam' emails.
 
-Both models achieved high precision for spam detection, crucial for minimizing false positives. The Multinomial Naive Bayes model showed slightly better overall performance (F1-score) for the spam class.
+![Class Distribution Plot](images/class_dist.png)
 
-**Confusion Matrices:**
+**Email Length Distribution:**
 
-![Multinomial Naive Bayes Confusion Matrix](mnb_confusion_matrix.png)
+Spam emails tend to be longer on average and have a wider distribution of lengths compared to ham emails.
 
-![Logistic Regression Confusion Matrix](lr_confusion_matrix.png)
+![Email Length Distribution - Ham](images/length_dist.png)
+![Email Length Distribution - Spam](images/length_dist.png)
 
-**Key Feature Analysis:**
+## Model Performance Summary
 
-The models identified distinct words as indicators of spam and ham. According to the Multinomial Naive Bayes model, top spam indicators include 'claim', 'prize', 'won', while top ham indicators include 'ill', 'ltgt', 'my'.
+Both the Multinomial Naive Bayes and Logistic Regression models performed well on the test set.
 
-![Top Spam/Ham Words Bar Charts](top_words_bar_chart.png)
+| Model                    | Accuracy | Precision (Spam) | Recall (Spam) | F1-score (Spam) |
+|--------------------------|----------|------------------|---------------|-----------------|
+| Multinomial Naive Bayes  | 0.9713   | 0.9916           | 0.7919        | 0.8806          |
+| Logistic Regression      | 0.9695   | 0.9915           | 0.7785        | 0.8722          |
 
-## Visualizations
+The Multinomial Naive Bayes model showed slightly better recall and F1-score for the spam class, making it a strong candidate for deployment.
 
-Here are some key visualizations from the project:
+## Recommendations
 
-### Class Distribution
+Based on the analysis, the Multinomial Naive Bayes model is recommended for this spam classification task due to its high precision and slightly better overall performance in capturing spam.
 
-![Class Distribution Plot](class_distribution.png)
+To further improve the model, consider:
+- Exploring N-gram features.
+- Experimenting with other advanced models like SVMs or deep learning approaches.
+- Fine-tuning hyperparameters of the selected model.
+- Regularly retraining the model with new data to adapt to evolving spam patterns.
 
-### Email Length Distribution
+**Key Feature Analysis Visualizations:**
 
-![Email Length Distribution Plots](email_length_distribution.png)
+**Confusion Matrix:**
 
-### Top Indicative Words (Multinomial Naive Bayes)
+Multinomial Naive Bayes Confusion Matrix:
+![Confusion Matrix - Multinomial Naive Bayes](images/confusion_matrix_NB.png)
 
-![Top Spam/Ham Words Bar Charts](top_words_bar_chart.png)
+Logistic Regression Confusion Matrix:
+![Confusion Matrix - Logistic Regression](images/confusion_matrix_LR.png)
 
-## Conclusion and Potential Improvements
+**Top Words Indicative of Spam and Ham (Multinomial Naive Bayes):**
 
-Our analysis and modeling efforts for email spam classification have yielded promising results. Both Multinomial Naive Bayes and Logistic Regression models demonstrated high accuracy and very high precision in identifying spam emails, which is crucial for minimizing false positives in a real-world spam filter. The Multinomial Naive Bayes model was slightly better in terms of recall and F1-score for the spam class.
+Analysis of model coefficients/log probabilities revealed words most indicative of spam and ham.
 
-Given the high precision, these models would be highly useful where minimizing false positives is a top priority. While some spam might still get through (lower recall), the low rate of legitimate emails being incorrectly flagged makes these models suitable for many applications, with the acceptable trade-off depending on specific business needs.
+![Top 10 Words Most Indicative of Spam (Multinomial Naive Bayes)](images/top_words_spam.png)
+![Top 10 Words Most Indicative of Ham (Multinomial Naive Bayes)](images/top_words_ham.png)
 
-To further enhance the performance, future work could involve exploring advanced text representation techniques (like N-grams or word embeddings), evaluating different classification algorithms (SVMs, deep learning models), systematic hyperparameter tuning, and incorporating strategies to handle evolving spam tactics through periodic retraining on new data. Additional feature engineering, such as analyzing URL patterns or email structure, could also be explored. Deploying such a model can lead to cleaner inboxes, improved security, and resource savings.
+
+## How to Run the Notebook
+
+1.  Upload the `spam (1).csv` dataset to your Colab environment.
+2.  Run all the code cells sequentially.
+
+## Dependencies
+
+The following libraries are required to run the notebook:
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- nltk
+- sklearn
