@@ -17,7 +17,7 @@ The dataset used in this project is an email dataset containing email text and a
 
 *   The dataset is imbalanced, with 4825 ham emails and 747 spam emails. This represents approximately 86.6% ham and 13.4% spam.
 
-![Class Distribution Plot](class_distribution.png)
+![Class Distribution Plot](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/class_dist.png)
 
 **Email Length Analysis:**
 
