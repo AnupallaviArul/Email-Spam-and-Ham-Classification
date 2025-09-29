@@ -41,8 +41,8 @@ The dataset is imbalanced, with a significantly larger number of 'ham' emails co
 
 Spam emails tend to be longer on average and have a wider distribution of lengths compared to ham emails.
 
-![Email Length Distribution - Ham](images/length_dist.png)
-![Email Length Distribution - Spam](images/length_dist.png)
+![Email Length Distribution - Ham](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/length_dist.png)
+![Email Length Distribution - Spam](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/length_dist.png)
 
 ## Model Performance Summary
 
@@ -70,17 +70,17 @@ To further improve the model, consider:
 **Confusion Matrix:**
 
 Multinomial Naive Bayes Confusion Matrix:
-![Confusion Matrix - Multinomial Naive Bayes](images/confusion_matrix_NB.png)
+![Confusion Matrix - Multinomial Naive Bayes](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/confusion_matrix_NB.png)
 
 Logistic Regression Confusion Matrix:
-![Confusion Matrix - Logistic Regression](images/confusion_matrix_LR.png)
+![Confusion Matrix - Logistic Regression](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/confusion_matrix_LR.png)
 
 **Top Words Indicative of Spam and Ham (Multinomial Naive Bayes):**
 
 Analysis of model coefficients/log probabilities revealed words most indicative of spam and ham.
 
-![Top 10 Words Most Indicative of Spam (Multinomial Naive Bayes)](images/top_words_spam.png)
-![Top 10 Words Most Indicative of Ham (Multinomial Naive Bayes)](images/top_words_ham.png)
+![Top 10 Words Most Indicative of Spam (Multinomial Naive Bayes)](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/top_words_spam.png)
+![Top 10 Words Most Indicative of Ham (Multinomial Naive Bayes)](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/top_words_ham.png)
 
 
 ## How to Run the Notebook
