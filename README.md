@@ -35,14 +35,13 @@ The exploratory data analysis revealed that spam emails are generally longer tha
 
 The dataset is imbalanced, with a significantly larger number of 'ham' emails compared to 'spam' emails.
 
-![Class Distribution Plot](images/class_dist.png)
+![Class Distribution Plot](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/class_dist.png)
 
 **Email Length Distribution:**
 
 Spam emails tend to be longer on average and have a wider distribution of lengths compared to ham emails.
 
 ![Email Length Distribution - Ham](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/length_dist.png)
-![Email Length Distribution - Spam](https://github.com/AnupallaviArul/Email-Spam-and-Ham-Classification/blob/main/length_dist.png)
 
 ## Model Performance Summary
 
